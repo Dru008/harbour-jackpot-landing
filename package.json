@@ -1,0 +1,12 @@
+{
+  "name": "harbour-jackpot-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Harbour Jackpot campaign landing page (IZIGROUP Digital Web Designer assessment, Test 2)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node build.mjs && python3 -m http.server 8080 --directory dist"
+  },
+  "engines": { "node": ">=20" }
+}
