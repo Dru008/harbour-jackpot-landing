@@ -84,7 +84,7 @@ function page(lang) {
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="${prefix}favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="${prefix}fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="${prefix}fonts/alata-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="${prefix}fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${prefix}styles.css">
   <script src="${prefix}countdown.js" defer></script>
@@ -132,7 +132,7 @@ function page(lang) {
           </p>
         </div>
 
-        <a class="btn btn--primary hero__cta" href="#buy-ticket" id="hero-cta">${esc(t.hero.cta)} <span class="btn__price">${euro(draw.ticketPrice)}</span></a>
+        <a class="btn btn--primary hero__cta" href="#buy-ticket" id="hero-cta">${esc(t.hero.cta)}</a>
       </div>
 
       <p class="compliance hero__compliance">
@@ -212,11 +212,11 @@ ${faqItems.map((i) => `          <details class="faq__item">
           <h2 id="safer-heading">${esc(t.safer.heading)}</h2>
           <p>${esc(t.safer.body)}</p>
           <a class="btn btn--outline" href="#safer-tools">${esc(t.safer.link)}</a>
+          <p class="safer__help">${esc(t.safer.help)} <a href="tel:${site.helpline.replace(/\s/g, '')}">${esc(fill(t.safer.helpLink, vars))}</a></p>
         </div>
         <ul class="safer__tools">
 ${t.safer.tools.map((x) => `          <li><strong>${esc(x.title)}</strong> <span>${esc(x.text)}</span></li>`).join('\n')}
         </ul>
-        <p class="safer__help">${esc(t.safer.help)} <a href="tel:${site.helpline.replace(/\s/g, '')}">${esc(fill(t.safer.helpLink, vars))}</a></p>
       </div>
     </section>
 
@@ -238,7 +238,7 @@ ${t.footer.nav.map((n) => `          <li><a href="#">${esc(n)}</a></li>`).join('
 
   <div class="sticky-cta" data-sticky hidden>
     <p class="sticky-cta__text"><strong>${euro(draw.jackpot)}</strong> <span>${esc(t.sticky.label)}</span></p>
-    <a class="btn btn--primary btn--small" href="#buy-ticket">${esc(t.hero.cta)}</a>
+    <a class="btn btn--primary" href="#buy-ticket">${esc(t.hero.cta)}</a>
   </div>
 </body>
 </html>
