@@ -8,8 +8,8 @@ The homepage hero from the banner set, built in HTML and CSS. All text is live H
 | --- | --- |
 | `index.html` | The hero markup |
 | `hero.css` | Styles, mobile first, one breakpoint at 768px |
-| `assets/hero-boat-mobile.avif` / `.webp` | Boat artwork for the 750 × 1000 slot (750 × 550, transparent) |
-| `assets/hero-boat-desktop.avif` / `.webp` | Boat artwork for the 1920 × 600 slot (540 × 600, transparent) |
+| `assets/hero-boat-mobile.avif` / `.webp` | Luzzu artwork for the 750 × 1000 slot (694 × 676, transparent) |
+| `assets/hero-boat-desktop.avif` / `.webp` | Same luzzu, mirrored for the 1920 × 600 slot (694 × 676, transparent) |
 | `assets/harbourplay-logo.svg` | Harbour Play logo |
 
 ## Run it
@@ -26,9 +26,9 @@ Then go to http://localhost:8000.
 
 - **Live text, not baked in.** The jackpot, draw time, button and compliance line are HTML, so they're readable by screen readers, search engines and AI tools, and easy to update or translate.
 - **Art direction with `<picture>`.** Mobile gets a wide crop of the whole boat; desktop gets the bow only, at the right edge. AVIF first, WebP fallback. `width` and `height` are set on every source to prevent layout shift.
-- **The boat is the only image.** The blue glow is a CSS gradient, so it costs nothing and scales to any screen. Artwork weighs 12.6 KB (mobile AVIF) and 10.3 KB (desktop AVIF).
+- **The boat is the only image.** The blue glow is a CSS gradient, so it costs nothing and scales to any screen. Artwork weighs 14.6 KB (mobile AVIF) and 13.3 KB (desktop AVIF).
 - **Loads first.** The artwork has `fetchpriority="high"` and isn't lazy-loaded, because the hero is the first thing on the page.
-- **One heading.** The `<h1>` reads "Starting jackpot €1,000,000 Harbour Jackpot Saturdays 21:00". The draw time uses `<time datetime="21:00">`.
+- **One heading.** The `<h1>` reads "Starting jackpot €1,000,000 Harbour Jackpot Saturdays at 21:00". The draw time uses `<time datetime="21:00">`.
 - **Safe zone.** On desktop the text stays inside the central 1200px. The boat sits outside it, so cropping on narrow screens loses nothing important.
 - **Maltese ready.** Jost and Inter both include Ħ ħ Ġ ġ Ż ż, and the layout wraps rather than clips if the copy gets longer.
 
@@ -44,13 +44,9 @@ Then go to http://localhost:8000.
 | Keyboard focus | 3px white outline on the button and the T&Cs link |
 | Decorative artwork | `alt=""` |
 
-## Swapping in the final artwork
+## Artwork
 
-The current boat images were cut out of the exported banners. To replace them:
-
-1. In Figma, hide the background and all text, then export only the boat layer as PNG at 2× (transparent).
-2. Convert to AVIF and WebP (for example with [Squoosh](https://squoosh.app)).
-3. Keep the same file names, and update `width` and `height` in `index.html` if the size changes.
+The luzzu is exported straight from the Figma banner file as a transparent PNG, then converted to AVIF and WebP. The desktop version is the same drawing mirrored, so the prow faces into the page as it does on the 1920 × 600 banner. The dark wave along the bottom is CSS on the landing page.
 
 ## Next (Test 2)
 

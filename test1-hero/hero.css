@@ -59,8 +59,8 @@ body {
   position: absolute;
   z-index: 0;
   left: 0;
-  right: 0;
-  bottom: 6%;
+  bottom: 0;
+  width: 92.5%;   /* same crop as the 750x1000 banner */
 }
 
 .hero__art img {
@@ -140,6 +140,7 @@ body {
   text-decoration: none;
 }
 
+.hero__cta { box-shadow: 3px 4px 0 rgba(5, 18, 40, 0.55); }
 .hero__cta:hover { background: var(--yellow-hover); }
 
 .hero__cta:focus-visible {
@@ -207,10 +208,12 @@ body {
   .hero::after { display: none; }
 
   .hero__art {
-    top: 0;
-    bottom: 0;
+    top: 6%;
+    bottom: auto;
+    height: 100%;
     left: auto;
     right: 0;
+    width: auto;
   }
 
   .hero__art img {
