@@ -1,6 +1,40 @@
 /* Harbour Jackpot landing page
    Mobile first (390px), one main breakpoint at 768px, wide layout from 1024px. */
 
+/* ---------- Fonts (self-hosted, variable, SIL Open Font License) ---------- */
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/jost-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/jost-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; /* Maltese letters: Ċ ċ Ġ ġ Ħ ħ Ż ż */
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; /* Maltese letters: Ċ ċ Ġ ġ Ħ ħ Ż ż */
+}
+
 /* ---------- Tokens ---------- */
 :root {
   --navy: #0A2346;
@@ -349,11 +383,12 @@ a { color: var(--link); text-underline-offset: 0.15em; }
   .hero::after { height: 24%; }
   /* Like the 1920x600 banner: the prow starts just below the top edge and the keel runs off the bottom */
   .hero__art { top: 6%; bottom: auto; height: 100%; left: auto; right: 0; width: auto; }
-  .hero__art img { width: auto; height: 100%; }
+  /* On narrower desktops the boat is cropped from the right so it never covers the text */
+  .hero__art img { width: auto; height: 100%; max-width: 44vw; object-fit: cover; object-position: left top; }
+  .hero__content { max-width: min(60%, 46rem); }
   .hero__eyebrow { font-size: clamp(1rem, 1.35vw, 1.5rem); }
   .hero__jackpot { font-size: clamp(4rem, 7.6vw, 9rem); margin: 0.2rem 0 0.5rem; }
-  .hero__meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0 0.6em; font-size: clamp(1.25rem, 1.85vw, 2.125rem); }
-  .hero__divider { display: inline-block; width: 2px; height: 1em; background: var(--yellow); }
+  .hero__meta { font-size: clamp(1.25rem, 1.85vw, 2.125rem); }
   .hero__compliance { font-size: clamp(0.8125rem, 0.95vw, 1.125rem); }
 
   .countdown { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
@@ -373,6 +408,12 @@ a { color: var(--link); text-underline-offset: 0.15em; }
   .site-footer__nav { justify-content: flex-end; }
 
   .sticky-cta { display: none !important; }
+}
+
+/* One line with a divider only where it fits; stacked below that, as on the mobile banner */
+@media (min-width: 1200px) {
+  .hero__meta { flex-direction: row; align-items: center; gap: 0 0.6em; white-space: nowrap; }
+  .hero__divider { display: inline-block; width: 2px; height: 1em; background: var(--yellow); }
 }
 
 @media (min-width: 1024px) {
