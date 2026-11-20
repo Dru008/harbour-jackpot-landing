@@ -99,7 +99,7 @@ body {
 }
 
 .hero__jackpot {
-  margin: 0.25rem 0 0.25rem;
+  margin: 0.08em 0 0.24em;   /* clears the comma descenders before the subline */
   font-family: var(--font-body);
   font-size: clamp(3rem, 13.33vw, 5.5rem);
   font-weight: 900;

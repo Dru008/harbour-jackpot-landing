@@ -216,7 +216,8 @@ a { color: var(--link); text-underline-offset: 0.15em; }
 .hero__heading { display: flex; flex-direction: column; font-weight: 400; }
 .hero__eyebrow { font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .hero__jackpot {
-  margin: 0.25rem 0 0.25rem;
+  /* Inter's commas hang about 0.14em below a 1.0 line box, so the bottom margin clears them before the subline */
+  margin: 0.08em 0 0.24em;
   font-family: var(--font-body);
   font-size: clamp(3rem, 13.33vw, 5.5rem); font-weight: 900; line-height: 1;
   letter-spacing: -0.01em; color: var(--yellow); white-space: nowrap;
@@ -242,8 +243,8 @@ a { color: var(--link); text-underline-offset: 0.15em; }
 .countdown__unit {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   width: 4rem; height: 4rem; gap: 0.25rem;
-  border: 1px solid rgba(202, 214, 238, 0.28); border-radius: 0.625rem;
-  background: rgba(8, 27, 54, 0.55);
+  border-radius: 0.625rem;
+  background: var(--navy-deep); /* solid, no border, as in the Figma Countdown unit */
 }
 .countdown__value {
   font-size: 1.625rem; font-weight: 700; line-height: 1;
