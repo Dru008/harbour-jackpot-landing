@@ -1,0 +1,189 @@
+{
+  "site": {
+    "brand": "Harbour Play",
+    "url": "https://harbourplay.example",
+    "operator": "Harbour Play Ltd",
+    "licence": "MGA/B2C/000/2026",
+    "regulator": "Malta Gaming Authority",
+    "helpline": "8000 1234",
+    "year": 2026
+  },
+
+  "draw": {
+    "name": "Harbour Jackpot",
+    "jackpot": 1000000,
+    "ticketPrice": 3,
+    "nextDraw": "2026-11-21T21:00:00+01:00",
+    "salesClose": "20:30",
+    "pickCount": 5,
+    "pickMax": 45,
+    "ballMax": 10
+  },
+
+  "prizes": [
+    { "match": "5 + Harbour Ball", "prize": "jackpot",    "odds": 12217590 },
+    { "match": "5",                "prize": 50000,        "odds": 1357510 },
+    { "match": "4 + Harbour Ball", "prize": 1000,         "odds": 61088 },
+    { "match": "4",                "prize": 100,          "odds": 6788 },
+    { "match": "3 + Harbour Ball", "prize": 25,           "odds": 1566 },
+    { "match": "3",                "prize": 10,           "odds": 174 },
+    { "match": "2 + Harbour Ball", "prize": 5,            "odds": 124 },
+    { "match": "1 + Harbour Ball", "prize": "freeTicket", "odds": 27 }
+  ],
+  "overallOdds": "19.2",
+
+  "results": {
+    "date": "2026-11-14T21:00:00+01:00",
+    "numbers": [3, 11, 19, 27, 40],
+    "harbourBall": 7,
+    "jackpotWinners": 1,
+    "totalWinners": 21486
+  },
+
+  "en": {
+    "meta": {
+      "title": "Harbour Jackpot: €1,000,000 starting jackpot, every Saturday at 21:00 | Harbour Play",
+      "description": "Harbour Jackpot is a weekly draw from Harbour Play, every Saturday at 21:00. Tickets are €3 and the jackpot starts at €1,000,000. 18+ only. Play responsibly."
+    },
+    "langName": "English",
+    "langSwitchLabel": "Language",
+    "skip": "Skip to main content",
+    "hero": {
+      "eyebrow": "Starting jackpot",
+      "drawDay": "Saturdays",
+      "cta": "Buy ticket",
+      "nextDraw": "Next draw",
+      "units": { "d": "days", "h": "hrs", "m": "mins", "s": "secs" },
+      "drawing": "The draw is happening now. Results soon."
+    },
+    "compliance": { "line": "Play responsibly. Set a limit.", "terms": "T&Cs apply" },
+    "howToPlay": {
+      "heading": "How to play",
+      "intro": "Three steps, about a minute.",
+      "steps": [
+        { "title": "Pick your numbers", "text": "Choose 5 numbers from 1 to 45, and 1 Harbour Ball from 1 to 10. Or let us pick them for you." },
+        { "title": "Buy your ticket", "text": "Each line costs €3. Ticket sales close at 20:30 on Saturday." },
+        { "title": "Watch the draw", "text": "The draw is every Saturday at 21:00. Results appear on this page within minutes." }
+      ]
+    },
+    "prizes": {
+      "heading": "Prizes and odds",
+      "caption": "Harbour Jackpot prizes for each line, and the odds of winning them",
+      "cols": ["Numbers matched", "Prize", "Odds (1 in)"],
+      "jackpot": "Jackpot",
+      "jackpotFrom": "from €1,000,000",
+      "ballLegend": "HB = Harbour Ball",
+      "freeTicket": "Free ticket (€3)",
+      "overall": "Overall odds of winning any prize: 1 in {odds}.",
+      "rollover": "If nobody wins the jackpot, it rolls over to the next Saturday."
+    },
+    "results": {
+      "heading": "Latest results",
+      "numbersLabel": "Winning numbers",
+      "ballLabel": "Harbour Ball",
+      "jackpotWon": "Jackpot won by {n} ticket. The next jackpot starts again at €1,000,000.",
+      "totalWinners": "{n} winning tickets in total.",
+      "all": "See all results"
+    },
+    "faq": {
+      "heading": "Frequently asked questions",
+      "items": [
+        { "q": "How much does a ticket cost?", "a": "Each line costs €3. You pick 5 numbers from 1 to 45 and 1 Harbour Ball from 1 to 10." },
+        { "q": "When is the draw?", "a": "Every Saturday at 21:00, Malta time. Ticket sales close at 20:30, so make sure you buy before then." },
+        { "q": "How do I find out if I've won?", "a": "Results go live on this page and on the results page within minutes of the draw. If you bought your ticket online, we also email you." },
+        { "q": "What happens if nobody wins the jackpot?", "a": "The jackpot rolls over to the following Saturday and keeps growing until someone matches all 5 numbers and the Harbour Ball." },
+        { "q": "How do I claim a prize?", "a": "Prizes up to €1,000 are paid into your Harbour Play account automatically. For larger prizes, we contact you to confirm your identity before paying." },
+        { "q": "Who can play?", "a": "You must be 18 or over and in Malta to buy a ticket. We check your age and identity when you register." },
+        { "q": "Can I limit how much I spend?", "a": "Yes. You can set daily, weekly or monthly deposit limits, take a break, or exclude yourself in your account settings. Lower limits apply straight away. Higher limits apply after 24 hours." }
+      ]
+    },
+    "safer": {
+      "heading": "Keep it fun",
+      "body": "A lottery is entertainment, not a way to make money or solve money worries. Only spend what you can afford to lose.",
+      "tools": [
+        { "title": "Deposit limits", "text": "Daily, weekly or monthly." },
+        { "title": "Reality checks", "text": "A reminder of how long you've been playing." },
+        { "title": "Take a break", "text": "From 24 hours to 6 weeks." },
+        { "title": "Self-exclusion", "text": "Close your account for 6 months or more." }
+      ],
+      "link": "Safer gambling tools",
+      "help": "Free, confidential support, 24/7:",
+      "helpLink": "Call {phone}"
+    },
+    "footer": {
+      "nav": ["Terms and conditions", "Privacy", "Safer gambling", "Contact us"],
+      "warning": "Gambling can be addictive. Play responsibly.",
+      "legal": "{brand} is operated by {operator}, licensed and regulated by the {regulator} under licence {licence}.",
+      "copyright": "© {year} {operator}. A fictional brand for a design assessment."
+    },
+    "sticky": { "label": "Next draw Saturday 21:00" }
+  },
+
+  "mt": {
+    "meta": {
+      "title": "Harbour Jackpot: jackpot tal-bidu ta' €1,000,000, kull nhar ta' Sibt fil-21:00 | Harbour Play",
+      "description": "Harbour Jackpot huwa ġbid kull ġimgħa minn Harbour Play, kull nhar ta' Sibt fil-21:00. Biljett jiswa €3. 18+ biss. Ilgħab b'responsabbiltà."
+    },
+    "langName": "Malti",
+    "langSwitchLabel": "Lingwa",
+    "skip": "Aqbeż għall-kontenut",
+    "hero": {
+      "eyebrow": "Jackpot tal-bidu",
+      "drawDay": "Kull nhar ta' Sibt",
+      "cta": "Ixtri biljett",
+      "nextDraw": "Il-ġbid li jmiss",
+      "units": { "d": "jiem", "h": "sigħat", "m": "minuti", "s": "sekondi" },
+      "drawing": "Il-ġbid għaddej issa. Ir-riżultati dalwaqt."
+    },
+    "compliance": { "line": "Ilgħab b'mod responsabbli. Issettja limitu.", "terms": "Japplikaw it-Termini u l-Kundizzjonijiet" },
+    "howToPlay": {
+      "heading": "Kif tilgħab",
+      "intro": "Tliet passi, madwar minuta.",
+      "steps": [
+        { "title": "Agħżel in-numri tiegħek", "text": "Agħżel 5 numri minn 1 sa 45, u Harbour Ball minn 1 sa 10. Jew ħallina nagħżluhom għalik." },
+        { "title": "Ixtri l-biljett", "text": "Kull linja tiswa €3. Il-bejgħ jagħlaq is-Sibt fl-20:30." },
+        { "title": "Segwi l-ġbid", "text": "Il-ġbid isir kull nhar ta' Sibt fil-21:00. Ir-riżultati jidhru hawn fi ftit minuti." }
+      ]
+    },
+    "prizes": {
+      "heading": "Premjijiet u ċansijiet",
+      "caption": "Il-premjijiet ta' Harbour Jackpot għal kull linja, u ċ-ċans li tirbaħhom",
+      "cols": ["Numri mqabbla", "Premju", "Ċans (1 f')"],
+      "jackpot": "Jackpot",
+      "jackpotFrom": "minn €1,000,000",
+      "ballLegend": "HB = Harbour Ball",
+      "freeTicket": "Biljett b'xejn (€3)",
+      "overall": "Iċ-ċans li tirbaħ xi premju: 1 f' {odds}.",
+      "rollover": "Jekk ħadd ma jirbaħ il-jackpot, dan jgħaddi għas-Sibt ta' wara."
+    },
+    "results": {
+      "heading": "L-aħħar riżultati",
+      "numbersLabel": "In-numri rebbieħa",
+      "ballLabel": "Harbour Ball",
+      "jackpotWon": "Il-jackpot intrebaħ minn {n} biljett. Il-jackpot li jmiss jerġa' jibda minn €1,000,000.",
+      "totalWinners": "{n} biljett rebbieħ b'kollox.",
+      "all": "Ara r-riżultati kollha"
+    },
+    "faq": { "heading": "Mistoqsijiet frekwenti" },
+    "safer": {
+      "heading": "Żommha divertenti",
+      "body": "Il-lotterija hija divertiment, mhux mod kif tagħmel il-flus jew issolvi problemi finanzjarji. Onfoq biss dak li tiflaħ titlef.",
+      "tools": [
+        { "title": "Limiti tad-depożitu", "text": "Kuljum, kull ġimgħa jew kull xahar." },
+        { "title": "Tfakkira tal-ħin", "text": "Tfakkira ta' kemm ilek tilgħab." },
+        { "title": "Ħu waqfa", "text": "Minn 24 siegħa sa 6 ġimgħat." },
+        { "title": "Awto-esklużjoni", "text": "Agħlaq il-kont għal 6 xhur jew aktar." }
+      ],
+      "link": "Għodod għal-logħob sigur",
+      "help": "Għajnuna b'xejn u kunfidenzjali, 24/7:",
+      "helpLink": "Ċempel {phone}"
+    },
+    "footer": {
+      "nav": ["Termini u kundizzjonijiet", "Privatezza", "Logħob sigur", "Ikkuntattjana"],
+      "warning": "Il-logħob tal-azzard jista' jwassal għal vizzju. Ilgħab b'responsabbiltà.",
+      "legal": "{brand} titħaddem minn {operator}, liċenzjata u regolata mill-{regulator} taħt il-liċenzja {licence}.",
+      "copyright": "© {year} {operator}. Marka fittizja għal assessjar tad-disinn."
+    },
+    "sticky": { "label": "Il-ġbid li jmiss: is-Sibt 21:00" }
+  }
+}
