@@ -78,6 +78,7 @@ function page(lang) {
   <meta property="og:description" content="${esc(t.meta.description)}">
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${site.url}/assets/og-harbour-jackpot-1200x630.webp">
+  <meta property="og:image:alt" content="Harbour Jackpot: starting jackpot €1,000,000, Saturdays at 21:00. 18+.">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
@@ -108,10 +109,10 @@ function page(lang) {
 
     <section class="hero" aria-labelledby="hero-heading">
       <picture class="hero__art">
-        <source media="(min-width: 768px)" type="image/avif" srcset="${prefix}assets/hero-boat-desktop.avif" width="540" height="600">
-        <source media="(min-width: 768px)" type="image/webp" srcset="${prefix}assets/hero-boat-desktop.webp" width="540" height="600">
-        <source type="image/avif" srcset="${prefix}assets/hero-boat-mobile.avif" width="750" height="550">
-        <img src="${prefix}assets/hero-boat-mobile.webp" width="750" height="550" alt="" fetchpriority="high" decoding="async">
+        <source media="(min-width: 768px)" type="image/avif" srcset="${prefix}assets/hero-boat-desktop.avif" width="694" height="676">
+        <source media="(min-width: 768px)" type="image/webp" srcset="${prefix}assets/hero-boat-desktop.webp" width="694" height="676">
+        <source type="image/avif" srcset="${prefix}assets/hero-boat-mobile.avif" width="694" height="676">
+        <img src="${prefix}assets/hero-boat-mobile.webp" width="694" height="676" alt="" fetchpriority="high" decoding="async">
       </picture>
 
       <div class="hero__content">

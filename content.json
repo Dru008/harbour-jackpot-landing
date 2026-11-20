@@ -50,7 +50,7 @@
     "skip": "Skip to main content",
     "hero": {
       "eyebrow": "Starting jackpot",
-      "drawDay": "Saturdays",
+      "drawDay": "Saturdays at",
       "cta": "Buy ticket",
       "nextDraw": "Next draw",
       "units": { "d": "days", "h": "hrs", "m": "mins", "s": "secs" },
@@ -129,7 +129,7 @@
     "skip": "Aqbeż għall-kontenut",
     "hero": {
       "eyebrow": "Jackpot tal-bidu",
-      "drawDay": "Kull nhar ta' Sibt",
+      "drawDay": "Kull nhar ta' Sibt,",
       "cta": "Ixtri biljett",
       "nextDraw": "Il-ġbid li jmiss",
       "units": { "d": "jiem", "h": "sigħat", "m": "minuti", "s": "sekondi" },
