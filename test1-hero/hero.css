@@ -5,13 +5,12 @@
   --navy: #0A2346;
   --navy-deep: #081B36;
   --glow: #0452C4;        /* darkened from #0560E0 so light-blue text keeps 4.5:1 at the brightest point */
-  --yellow: #F5C42E;      /* from the Harbour Play logo */
-  --yellow-hover: #FFD45C;
+  --yellow: #F6C431;      /* Figma variable: Yellow */
   --ink: #0A1A33;
-  --muted: #CAD6EE;       /* from the Harbour Play logo */
+  --muted: #C9D6EE;       /* Figma variable: Muted */
   --white: #FFFFFF;
 
-  --font-display: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  --font-display: "Alata", "Futura", "Century Gothic", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --content-max: 75rem;   /* 1200px: the desktop safe zone */
@@ -100,9 +99,10 @@ body {
 }
 
 .hero__jackpot {
-  margin: 0.4rem 0 0.6rem;
-  font-size: clamp(3rem, 13.2vw, 5.5rem);
-  font-weight: 700;
+  margin: 0.25rem 0 0.25rem;
+  font-family: var(--font-body);
+  font-size: clamp(3rem, 13.33vw, 5.5rem);
+  font-weight: 900;
   line-height: 1;
   letter-spacing: -0.01em;
   color: var(--yellow);
@@ -112,9 +112,9 @@ body {
 .hero__meta {
   display: flex;
   flex-direction: column;
-  font-size: clamp(1.25rem, 5.6vw, 2rem);
+  font-size: clamp(1.25rem, 5.13vw, 2rem);
   line-height: 1.2;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -126,22 +126,28 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 3rem;              /* 48px touch target */
+  min-width: 12.5rem;
   margin-top: 1.5rem;
-  padding: 0.7em 2.2em;
+  padding: 0 2rem;
   border-radius: 999px;
   background: var(--yellow);
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
+  /* Figma CTA, Idle: hard Ink shadow 2px right, 4px down */
+  box-shadow: 2px 4px 0 var(--ink);
 }
 
-.hero__cta { box-shadow: 3px 4px 0 rgba(5, 18, 40, 0.55); }
-.hero__cta:hover { background: var(--yellow-hover); }
+/* Figma CTA, Hover/Press: the pill drops into its shadow */
+@media (hover: hover) {
+  .hero__cta:hover { transform: translate(2px, 4px); box-shadow: 0 0 0 var(--ink); }
+}
+.hero__cta:active { transform: translate(2px, 4px); box-shadow: 0 0 0 var(--ink); }
 
 .hero__cta:focus-visible {
   outline: 3px solid var(--white);
@@ -186,7 +192,8 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero__cta { transition: background-color 0.15s ease; }
+  .hero__cta { transition: transform 0.12s ease-out, box-shadow 0.12s ease-out; }
+  .hero__cta:active { transition-duration: 0.05s; }
 }
 
 /* ---------- Hero: desktop (1920×600 slot, 16:5) ---------- */
@@ -226,11 +233,10 @@ body {
     margin-bottom: clamp(0.75rem, 1.2vw, 1.5rem);
   }
 
-  .hero__eyebrow { font-size: clamp(1rem, 1.35vw, 1.625rem); }
+  .hero__eyebrow { font-size: clamp(1rem, 1.39vw, 1.625rem); }
 
   .hero__jackpot {
-    font-size: clamp(4rem, 8vw, 9.5rem);
-    margin: 0.2rem 0 0.5rem;
+    font-size: clamp(4rem, 8.33vw, 9.25rem);
   }
 
   .hero__meta {
@@ -238,7 +244,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     gap: 0 0.6em;
-    font-size: clamp(1.25rem, 1.85vw, 2.25rem);
+    font-size: clamp(1.25rem, 1.94vw, 2.25rem);
   }
 
   .hero__divider {
@@ -250,7 +256,6 @@ body {
 
   .hero__cta {
     margin-top: clamp(0.75rem, 1.3vw, 1.5rem);
-    font-size: clamp(1.125rem, 1.6vw, 1.875rem);
   }
 
   .hero__compliance {

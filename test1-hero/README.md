@@ -28,9 +28,10 @@ Then go to http://localhost:8000.
 - **Art direction with `<picture>`.** Mobile gets a wide crop of the whole boat; desktop gets the bow only, at the right edge. AVIF first, WebP fallback. `width` and `height` are set on every source to prevent layout shift.
 - **The boat is the only image.** The blue glow is a CSS gradient, so it costs nothing and scales to any screen. Artwork weighs 14.6 KB (mobile AVIF) and 13.3 KB (desktop AVIF).
 - **Loads first.** The artwork has `fetchpriority="high"` and isn't lazy-loaded, because the hero is the first thing on the page.
+- **Pressable button.** The Buy ticket button follows the Figma CTA component: idle has a hard Ink shadow (2px, 4px); on hover or press the pill moves 2px right and 4px down into the shadow. Transforms only, so nothing else on the page moves, and the motion is skipped with `prefers-reduced-motion`.
 - **One heading.** The `<h1>` reads "Starting jackpot €1,000,000 Harbour Jackpot Saturdays at 21:00". The draw time uses `<time datetime="21:00">`.
 - **Safe zone.** On desktop the text stays inside the central 1200px. The boat sits outside it, so cropping on narrow screens loses nothing important.
-- **Maltese ready.** Jost and Inter both include Ħ ħ Ġ ġ Ż ż, and the layout wraps rather than clips if the copy gets longer.
+- **Maltese ready.** Alata and Inter both include Ħ ħ Ġ ġ Ż ż, and the layout wraps rather than clips if the copy gets longer.
 
 ## Accessibility (WCAG 2.2 AA)
 
@@ -54,5 +55,5 @@ This hero becomes the top of the landing page. The jackpot and draw time will co
 
 ## Credits
 
-- Fonts: [Jost](https://fonts.google.com/specimen/Jost) and [Inter](https://fonts.google.com/specimen/Inter), Google Fonts (SIL Open Font License). For production I'd self-host them as subset WOFF2 files.
+- Fonts: [Alata](https://fonts.google.com/specimen/Alata) and [Inter](https://fonts.google.com/specimen/Inter), Google Fonts (SIL Open Font License). The landing page self-hosts them; this standalone hero loads them from Google for simplicity.
 - AI use: the HTML/CSS and the boat cut-outs were drafted with Claude. [Add what you checked and changed yourself.]
