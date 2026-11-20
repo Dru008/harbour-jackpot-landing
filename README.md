@@ -70,14 +70,13 @@ On a traditional server: run the build in CI and copy `dist/` to the web root (f
 
 Mobile targets from the brief: LCP under 2.5s, CLS under 0.1, INP under 200ms.
 
-- Hero artwork is 12.6 KB (AVIF), not lazy-loaded, with `fetchpriority="high"`.
+- Hero artwork is 14.6 KB (AVIF), not lazy-loaded, with `fetchpriority="high"`. The glow and the wave are CSS, not images.
 - Every image has `width` and `height`; the countdown renders placeholder digits at full size, so nothing shifts when it starts.
 - One CSS file, one small deferred script, no frameworks.
 - **To do:** run Lighthouse (Chrome DevTools, mobile) on the deployed URL and add the report here. Self-hosting the two fonts as subset WOFF2 files would remove the Google Fonts round trip.
 
 ## Placeholders to replace
 
-- `assets/og-harbour-jackpot-1200x630.webp`: the social share image from Test 1 (export without the safe-zone frame).
 - Helpline number `8000 1234` is fictional.
 - Results and winner counts are made up for the mockup.
 
