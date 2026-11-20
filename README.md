@@ -43,7 +43,7 @@ test1-hero/        Test 1: the homepage hero coded on its own (see its README)
 
 ## Deploying
 
-`dist/` is plain static files, so any static host works. On Netlify, Vercel or Cloudflare Pages: build command `npm run build`, output directory `dist`. Each push to `main` deploys to production, and each pull request gets a preview URL for review before it goes live.
+`dist/` is plain static files, so any static host works. On Netlify, Vercel or Cloudflare Pages: build command `npm run build`, output directory `dist`. `vercel.json` already sets this for Vercel, and sends an `X-Robots-Tag: noindex` header so this demo of a fictional gambling brand stays out of search results. The HTML itself is fully indexable, as a real launch would be. Each push to `main` deploys to production, and each pull request gets a preview URL for review before it goes live.
 
 On a traditional server: run the build in CI and copy `dist/` to the web root (for example with `rsync`), with long cache headers on `assets/` and short ones on the HTML.
 
