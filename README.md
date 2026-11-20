@@ -100,7 +100,7 @@ The first run scored 92 for performance with a 3.2 s LCP: the Google Fonts style
 
 ## Credits
 
-- Fonts: [Jost](https://fonts.google.com/specimen/Jost) and [Inter](https://fonts.google.com/specimen/Inter), SIL Open Font License, self-hosted from Google Fonts.
+- Fonts: [Alata](https://fonts.google.com/specimen/Alata) and [Inter](https://fonts.google.com/specimen/Inter), SIL Open Font License, self-hosted from Google Fonts.
 - Luzzu illustration and Harbour Play logo: my own, from the Figma banner file.
 
 ## AI use
