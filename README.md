@@ -72,13 +72,36 @@ Mobile targets from the brief: LCP under 2.5s, CLS under 0.1, INP under 200ms.
 
 - Hero artwork is 14.6 KB (AVIF), not lazy-loaded, with `fetchpriority="high"`. The glow and the wave are CSS, not images.
 - Every image has `width` and `height`; the countdown renders placeholder digits at full size, so nothing shifts when it starts.
-- One CSS file, one small deferred script, no frameworks.
-- **To do:** run Lighthouse (Chrome DevTools, mobile) on the deployed URL and add the report here. Self-hosting the two fonts as subset WOFF2 files would remove the Google Fonts round trip.
+- One CSS file, one small deferred script, no frameworks. Total page weight: 102 KiB.
+- Fonts are self-hosted variable WOFF2 files, split into Latin and Latin Extended so the Maltese letters only download on pages that use them. The two Latin files are preloaded.
+
+### Lighthouse (mobile, live site)
+
+Full report: [`reports/lighthouse-mobile.report.html`](reports/lighthouse-mobile.report.html) (open it in a browser). Run on https://harbour-jackpot.vercel.app/ with Lighthouse's default mobile emulation and simulated slow 4G.
+
+| Metric | Result | Target |
+| --- | --- | --- |
+| Performance | 100 | |
+| Accessibility | 100 | |
+| Best practices | 100 | |
+| SEO | 66, see below | |
+| Largest Contentful Paint | 1.5 s | under 2.5 s |
+| Cumulative Layout Shift | 0 | under 0.1 |
+| Total Blocking Time | 0 ms | (lab stand-in for INP, target under 200 ms) |
+
+**SEO 66 is deliberate.** The only failing audit is "Page is blocked from indexing", caused by the `X-Robots-Tag: noindex` header in `vercel.json`, which keeps this fictional gambling brand out of search results. Every other SEO audit passes (title, meta description, canonical, `hreflang`, link text, crawlable links, structured data). Remove the header and the score is 100.
+
+The first run scored 92 for performance with a 3.2 s LCP: the Google Fonts stylesheet blocked rendering for about 950 ms. Self-hosting and preloading the fonts brought LCP down to 1.5 s.
 
 ## Placeholders to replace
 
 - Helpline number `8000 1234` is fictional.
 - Results and winner counts are made up for the mockup.
+
+## Credits
+
+- Fonts: [Jost](https://fonts.google.com/specimen/Jost) and [Inter](https://fonts.google.com/specimen/Inter), SIL Open Font License, self-hosted from Google Fonts.
+- Luzzu illustration and Harbour Play logo: my own, from the Figma banner file.
 
 ## AI use
 

@@ -2,3 +2,7 @@ dist/
 .DS_Store
 node_modules/
 .claude/
+.vercel/
+.vercel
+.env*
+reports/*.json
