@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbour Jackpot · €1,000,000 starting jackpot · Harbour Play</title>
+  <meta name="description" content="Harbour Jackpot is a new weekly draw from Harbour Play, every Saturday at 21:00. Tickets €3, starting jackpot €1,000,000. 18+ only. Play responsibly.">
+
+  <!-- Fonts: Jost (display) and Inter (small print). Both include Maltese letters (Ħ ħ Ġ ġ Ż ż). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Jost:wght@400;500;700&display=swap">
+
+  <link rel="stylesheet" href="hero.css">
+</head>
+<body>
+
+  <section class="hero" aria-labelledby="hero-heading">
+
+    <!-- Artwork only: no text is baked into the image. Different crop for mobile and desktop (art direction). -->
+    <picture class="hero__art">
+      <source media="(min-width: 768px)" type="image/avif" srcset="assets/hero-boat-desktop.avif" width="540" height="600">
+      <source media="(min-width: 768px)" type="image/webp" srcset="assets/hero-boat-desktop.webp" width="540" height="600">
+      <source type="image/avif" srcset="assets/hero-boat-mobile.avif" width="750" height="550">
+      <img src="assets/hero-boat-mobile.webp" width="750" height="550" alt="" fetchpriority="high" decoding="async">
+    </picture>
+
+    <div class="hero__content">
+      <img class="hero__logo" src="assets/harbourplay-logo.svg" width="185" height="76" alt="Harbour Play">
+
+      <h1 class="hero__heading" id="hero-heading">
+        <span class="hero__eyebrow">Starting jackpot</span>
+        <span class="hero__jackpot">€1,000,000</span>
+        <span class="hero__meta">
+          <span>Harbour Jackpot</span>
+          <span class="hero__divider" aria-hidden="true"></span>
+          <span>Saturdays <time datetime="21:00">21:00</time></span>
+        </span>
+      </h1>
+
+      <a class="hero__cta" href="#buy-ticket">Buy ticket</a>
+    </div>
+
+    <p class="hero__compliance">
+      <span class="hero__age">18+</span>
+      <span>Play responsibly. Set a limit. <a href="#terms">T&amp;Cs apply</a>.</span>
+    </p>
+
+  </section>
+
+</body>
+</html>

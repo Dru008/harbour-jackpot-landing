@@ -1,0 +1,263 @@
+/* Harbour Jackpot hero
+   Mobile first. One breakpoint at 768px, matching the 750×1000 and 1920×600 banner slots. */
+
+:root {
+  --navy: #0A2346;
+  --navy-deep: #081B36;
+  --glow: #0452C4;        /* darkened from #0560E0 so light-blue text keeps 4.5:1 at the brightest point */
+  --yellow: #F5C42E;      /* from the Harbour Play logo */
+  --yellow-hover: #FFD45C;
+  --ink: #0A1A33;
+  --muted: #CAD6EE;       /* from the Harbour Play logo */
+  --white: #FFFFFF;
+
+  --font-display: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --content-max: 75rem;   /* 1200px: the desktop safe zone */
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--navy-deep);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Hero: mobile (750×1000 slot, 3:4) ---------- */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3 / 4;
+  padding: 2rem 1.75rem 1.5rem;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 47%, var(--glow) 0%, #0A3F92 42%, rgba(10, 35, 70, 0) 78%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+}
+
+/* Scrim so the small print stays readable over the boat */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 24%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(8, 27, 54, 0) 0%, rgba(8, 27, 54, 0.94) 55%);
+}
+
+.hero__art {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+}
+
+.hero__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__logo {
+  display: block;
+  width: auto;
+  height: 2.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.hero__eyebrow {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero__jackpot {
+  margin: 0.4rem 0 0.6rem;
+  font-size: clamp(3rem, 13.2vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--yellow);
+  white-space: nowrap;
+}
+
+.hero__meta {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.25rem, 5.6vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero__divider { display: none; }
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;              /* 48px touch target */
+  margin-top: 1.5rem;
+  padding: 0.7em 2.2em;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hero__cta:hover { background: var(--yellow-hover); }
+
+.hero__cta:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+.hero__compliance {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: auto 0 0;
+  font-size: 0.8125rem;          /* 13px */
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.hero__age {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1.5px solid var(--white);
+  border-radius: 50%;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.hero__compliance a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.hero__compliance a:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__cta { transition: background-color 0.15s ease; }
+}
+
+/* ---------- Hero: desktop (1920×600 slot, 16:5) ---------- */
+
+@media (min-width: 768px) {
+  .hero {
+    /* 1920×600 slot: height follows the width (16:5) between 416px and 600px,
+       and grows if the content ever needs more room */
+    aspect-ratio: auto;
+    min-height: clamp(26rem, 31.25vw, 37.5rem);
+    padding-block: clamp(1.25rem, 2.6vw, 2.75rem);
+    /* Text stays inside the central 1200px */
+    padding-inline: max(1.5rem, calc((100% - var(--content-max)) / 2));
+    background:
+      radial-gradient(ellipse 55% 95% at 42% 50%, var(--glow) 0%, #0A3F92 45%, rgba(10, 35, 70, 0) 80%),
+      var(--navy);
+  }
+
+  .hero::after { display: none; }
+
+  .hero__art {
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 0;
+  }
+
+  .hero__art img {
+    width: auto;
+    height: 100%;
+  }
+
+  .hero__logo {
+    height: clamp(2.5rem, 3.1vw, 3.75rem);
+    margin-bottom: clamp(0.75rem, 1.2vw, 1.5rem);
+  }
+
+  .hero__eyebrow { font-size: clamp(1rem, 1.35vw, 1.625rem); }
+
+  .hero__jackpot {
+    font-size: clamp(4rem, 8vw, 9.5rem);
+    margin: 0.2rem 0 0.5rem;
+  }
+
+  .hero__meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 0.6em;
+    font-size: clamp(1.25rem, 1.85vw, 2.25rem);
+  }
+
+  .hero__divider {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--yellow);
+  }
+
+  .hero__cta {
+    margin-top: clamp(0.75rem, 1.3vw, 1.5rem);
+    font-size: clamp(1.125rem, 1.6vw, 1.875rem);
+  }
+
+  .hero__compliance {
+    padding-top: 1rem;
+    font-size: clamp(0.8125rem, 1vw, 1.25rem);
+  }
+
+  .hero__age {
+    width: 2.1em;
+    height: 2.1em;
+    font-size: 0.85em;
+  }
+}
