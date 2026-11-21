@@ -108,11 +108,12 @@ function page(lang) {
   <main id="main">
 
     <section class="hero" aria-labelledby="hero-heading">
+      <!-- Banner artwork from Figma (background, luzzu, wave) with the text removed; every word on the hero is live HTML -->
       <picture class="hero__art">
-        <source media="(min-width: 768px)" type="image/avif" srcset="${prefix}assets/hero-boat-desktop.avif" width="694" height="676">
-        <source media="(min-width: 768px)" type="image/webp" srcset="${prefix}assets/hero-boat-desktop.webp" width="694" height="676">
-        <source type="image/avif" srcset="${prefix}assets/hero-boat-mobile.avif" width="694" height="676">
-        <img src="${prefix}assets/hero-boat-mobile.webp" width="694" height="676" alt="" fetchpriority="high" decoding="async">
+        <source media="(min-width: 768px)" type="image/avif" srcset="${prefix}assets/hero-desktop-1280.avif 1280w, ${prefix}assets/hero-desktop-1920.avif 1920w" sizes="100vw" width="1920" height="600">
+        <source media="(min-width: 768px)" type="image/webp" srcset="${prefix}assets/hero-desktop-1280.webp 1280w, ${prefix}assets/hero-desktop-1920.webp 1920w" sizes="100vw" width="1920" height="600">
+        <source type="image/avif" srcset="${prefix}assets/hero-mobile-450.avif 450w, ${prefix}assets/hero-mobile-750.avif 750w" sizes="100vw" width="750" height="1000">
+        <img src="${prefix}assets/hero-mobile-750.webp" srcset="${prefix}assets/hero-mobile-450.webp 450w, ${prefix}assets/hero-mobile-750.webp 750w" sizes="100vw" width="750" height="1000" alt="" fetchpriority="high" decoding="async">
       </picture>
 
       <div class="hero__content">

@@ -70,7 +70,7 @@ On a traditional server: run the build in CI and copy `dist/` to the web root (f
 
 Mobile targets from the brief: LCP under 2.5s, CLS under 0.1, INP under 200ms.
 
-- Hero artwork is 14.6 KB (AVIF), not lazy-loaded, with `fetchpriority="high"`. The glow and the wave are CSS, not images.
+- The hero artwork is the Figma banner artwork (glow, luzzu and wave) with the text removed: 10.2 KB on mobile and 9.0 KB on desktop (AVIF), served at two widths each with `srcset`, not lazy-loaded, with `fetchpriority="high"`. All hero text is live HTML.
 - Every image has `width` and `height`; the countdown renders placeholder digits at full size, so nothing shifts when it starts.
 - One CSS file, one small deferred script, no frameworks. Total page weight: 108 KiB.
 - Fonts are self-hosted variable WOFF2 files, split into Latin and Latin Extended so the Maltese letters only download on pages that use them. The two Latin files are preloaded.

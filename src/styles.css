@@ -39,7 +39,6 @@
 :root {
   --navy: #0A2346;
   --navy-deep: #081B36;
-  --glow: #0452C4;
   --yellow: #F6C431;
   --yellow-tint: #FFF4D1;
   --yellow-tint-50: #FFF9E8; /* Yellow Tint at 50% on white */
@@ -198,17 +197,11 @@ a { color: var(--link); text-underline-offset: 0.15em; }
   min-height: 179.5vw; /* 700px at 390, like the Figma frame */
   padding: calc(var(--header-h) + 1rem) 1.75rem 1.5rem;
   color: var(--white);
-  background:
-    radial-gradient(ellipse 90% 45% at 50% 40%, var(--glow) 0%, #0A3F92 42%, rgba(10, 35, 70, 0) 78%),
-    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  background: var(--navy);
 }
-/* The dark wave from the banners: sits over the bottom of the boat and keeps the small print readable */
-.hero::after {
-  content: ""; position: absolute; inset: auto 0 0 0; height: 17%; z-index: 0; pointer-events: none;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M0 38C280 2 640 0 1000 46V100H0Z' fill='%23091E3D' fill-opacity='0.92'/%3E%3C/svg%3E") no-repeat bottom / 100% 100%;
-}
-/* Same crop as the 750x1000 banner: the boat spans 92.5% of the width, sitting on the bottom edge */
-.hero__art { position: absolute; z-index: 0; left: 0; bottom: 0; width: 92.5%; }
+/* Banner artwork (background glow, luzzu and wave), exported from Figma without text.
+   Mobile: the 3:4 artwork sits on the bottom edge, as in the 750x1000 banner. Its top edge is the same navy as the hero. */
+.hero__art { position: absolute; z-index: 0; left: 0; right: 0; bottom: 0; }
 .hero__art img { display: block; width: 100%; height: auto; }
 
 .hero__content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; }
@@ -237,7 +230,7 @@ a { color: var(--link); text-underline-offset: 0.15em; }
 
 /* Countdown */
 .countdown { margin-top: 1.25rem; }
-.countdown__title { font-size: 0.875rem; color: var(--muted); }
+.countdown__title { font-size: 0.875rem; color: var(--white); } /* white, not light blue: it can sit on the brightest part of the glow */
 .countdown__title time { color: var(--white); font-weight: 600; }
 .countdown__clock { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
 .countdown__unit {
@@ -390,15 +383,10 @@ a { color: var(--link); text-underline-offset: 0.15em; }
   .hero {
     min-height: clamp(30rem, 41.67vw, 40rem); /* 600px at 1440, like the Figma frame */
     padding: calc(var(--header-h) + 0.5rem) max(var(--gutter), calc((100% - var(--content-max)) / 2)) clamp(1.5rem, 2.6vw, 2.5rem);
-    background:
-      radial-gradient(ellipse 55% 95% at 42% 50%, var(--glow) 0%, #0A3F92 45%, rgba(10, 35, 70, 0) 80%),
-      var(--navy);
   }
-  .hero::after { height: 24%; }
-  /* Like the 1920x600 banner: the prow starts just below the top edge and the keel runs off the bottom */
-  .hero__art { top: 6%; bottom: auto; height: 100%; left: auto; right: -7.5vw; width: auto; } /* prow at the same spot as the Figma 1440 frame */
-  /* On narrower desktops the boat is cropped from the right so it never covers the text */
-  .hero__art img { width: auto; height: 100%; max-width: 44vw; object-fit: cover; object-position: left top; }
+  /* Desktop: the 16:5 artwork covers the hero, cropped from the left so the boat stays at the right edge, as in the 1920x600 banner */
+  .hero__art { top: 0; }
+  .hero__art img { height: 100%; object-fit: cover; object-position: right bottom; }
   .hero__content { max-width: min(60%, 46rem); }
   .hero__eyebrow { font-size: clamp(1rem, 1.39vw, 1.5rem); }
   .hero__jackpot { font-size: clamp(4rem, 8.33vw, 9.25rem); }
