@@ -24,7 +24,7 @@ Then go to http://localhost:8000.
 
 ## Decisions
 
-- **Live text, not baked in.** The jackpot, draw time, button and compliance line are HTML, so they're readable by screen readers, search engines and AI tools, and easy to update or translate.
+- **Live text, not baked in.** The jackpot, draw time, button and compliance line are HTML, so they're readable by screen readers and search engines, and easy to update or translate.
 - **Art direction with `<picture>` and `srcset`.** Mobile gets the 3:4 banner artwork, desktop the 16:5 one, each at two widths so phones and laptops download only what they need. AVIF first, WebP fallback. `width` and `height` are set on every source to prevent layout shift.
 - **Tiny artwork.** Flat vector art compresses well: 10.2 KB for mobile (750px AVIF) and 9.0 KB for desktop (1920px AVIF), far under the 150 KB hero limit. Between 768 and 1330px the hero is taller than 16:5, so the artwork is cropped from the left and the boat stays in view.
 - **Loads first.** The artwork has `fetchpriority="high"` and isn't lazy-loaded, because the hero is the first thing on the page.
@@ -49,11 +49,6 @@ Then go to http://localhost:8000.
 
 Exported straight from the Figma banners (Hero desktop · 1920x600 and Hero mobile · 750x1000) with the logo, text, button and compliance line removed, then converted to AVIF and WebP. To update it, edit the banner in Figma and export again without the text layers, keeping the same file names.
 
-## Next (Test 2)
-
-This hero becomes the top of the landing page. The jackpot and draw time will come from the content file, and a countdown to the next draw will sit under the button.
-
 ## Credits
 
 - Fonts: [Alata](https://fonts.google.com/specimen/Alata) and [Inter](https://fonts.google.com/specimen/Inter), Google Fonts (SIL Open Font License). The landing page self-hosts them; this standalone hero loads them from Google for simplicity.
-- AI use: the HTML/CSS and the boat cut-outs were drafted with Claude. [Add what you checked and changed yourself.]

@@ -49,8 +49,8 @@ On a traditional server: run the build in CI and copy `dist/` to the web root (f
 
 ## Decisions
 
-- **Static HTML from a content file.** Search engines and AI tools read the jackpot, draw time, prizes, results and FAQ as plain text, with no JavaScript needed. Only the live countdown and the sticky bar use JavaScript.
-- **Structured data.** `FAQPage` for the FAQ and `Event` for the next draw (date, €3 price, 18+), so search and AI answers can pick up the draw time correctly.
+- **Static HTML from a content file.** Search engines read the jackpot, draw time, prizes, results and FAQ as plain text, with no JavaScript needed. Only the live countdown and the sticky bar use JavaScript.
+- **Structured data.** `FAQPage` for the FAQ and `Event` for the next draw (date, €3 price, 18+), so search results can pick up the draw time correctly.
 - **Mobile first.** 72% of traffic is mobile. On phones a sticky "Buy ticket" bar appears once the hero button scrolls away. It hides again over the safer gambling block and the footer, so the page never pushes a sale next to the support content.
 - **Clear prize odds.** Odds are shown for every tier, plus the overall odds (1 in 19.2), so players can make an informed choice. On small screens "Harbour Ball" is shortened to "HB" visually, while screen readers still hear the full label.
 - **Maltese.** `/mt/` is built from the same template, with `hreflang` links between the two. The FAQ answers aren't translated yet, so that block keeps `lang="en"` on the Maltese page and screen readers pronounce it correctly. Maltese dates are formatted by hand in the countdown, because some browsers ship without Maltese date names.
@@ -93,7 +93,7 @@ Full report: [`reports/lighthouse-mobile.report.html`](reports/lighthouse-mobile
 
 The first run scored 92 for performance with a 3.2 s LCP: the Google Fonts stylesheet blocked rendering for about 950 ms. Self-hosting and preloading the fonts brought LCP down to 1.5 s.
 
-## Placeholders to replace
+## Placeholder content
 
 - Helpline number `8000 1234` is fictional.
 - Results and winner counts are made up for the mockup.
@@ -102,7 +102,3 @@ The first run scored 92 for performance with a 3.2 s LCP: the Google Fonts style
 
 - Fonts: [Alata](https://fonts.google.com/specimen/Alata) and [Inter](https://fonts.google.com/specimen/Inter), SIL Open Font License, self-hosted from Google Fonts.
 - Luzzu illustration and Harbour Play logo: my own, from the Figma banner file.
-
-## AI use
-
-The build script, CSS, countdown and first draft of the copy were drafted with Claude. [Add what you reviewed, changed and decided yourself.]
