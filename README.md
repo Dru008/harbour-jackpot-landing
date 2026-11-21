@@ -1,20 +1,24 @@
-#Test 2 · Harbour Jackpot · landing page
+# Test 2 · Harbour Jackpot · landing page
 
-## Setup and build
+Live: https://harbour-jackpot.vercel.app (English) · https://harbour-jackpot.vercel.app/mt/ (Maltese)
+
+## Setup
 
 Needs Node 20 or later. There are no dependencies to install.
 
+## Build
+
+    npm run build      # writes dist/index.html (English) and dist/mt/index.html (Maltese)
+    npm run preview    # builds, then serves dist/ at http://localhost:8080
+
+All copy, the jackpot, the draw date and the results live in `content.json`. Edit it and run the build again.
+
 ## Deploying
 
-Deployed on vercel.
+`dist/` is plain static files, so any static host works.
 
-## Accessibility (WCAG 2.2 AA)
+- **Vercel (used for the live link):** `vercel.json` sets the build command (`npm run build`) and the output folder (`dist`). Deploy with `npx vercel deploy --prod`, or connect the GitHub repo in Vercel so every push to `main` goes live and every pull request gets a preview link.
+- **Other hosts (Netlify, Cloudflare Pages):** build command `npm run build`, output folder `dist`.
+- **Traditional server:** run the build in CI and copy `dist/` to the web root (for example with `rsync`). Use long cache times for `assets/` and short ones for the HTML.
 
-- One `<h1>`, headings in order, a skip link, landmarks (`header`, `main`, `footer`, labelled sections).
-- Prize tiers are a real `<table>` with a caption and `scope` on header cells.
-- FAQ uses `<details>`/`<summary>`, so it works with keyboard and screen readers without JavaScript.
-- The countdown is hidden from screen readers (it would announce every second). The draw date is plain text next to it instead.
-- Contrast: lowest text pair is 6.45:1 (grey text on the light blue safer gambling block). Button text on yellow is 10.6:1.
-- Touch targets are 44px or more. Inline links inside sentences are exempt under WCAG 2.5.8.
-- Visible focus outlines everywhere, white on dark backgrounds.
-- No motion except a short colour transition, which is off for `prefers-reduced-motion`.
+`vercel.json` also sends an `X-Robots-Tag: noindex` header, so this demo of a fictional gambling brand stays out of search results. That header is why Lighthouse SEO shows 66. Remove it for a real launch.
