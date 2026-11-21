@@ -17,12 +17,13 @@
 
   <section class="hero" aria-labelledby="hero-heading">
 
-    <!-- Artwork only: no text is baked into the image. Different crop for mobile and desktop (art direction). -->
+    <!-- Artwork exported from the Figma banners with every text layer removed: background, luzzu and wave.
+         All the words are live HTML on top. Art direction: 3:4 crop on mobile, 16:5 on desktop. -->
     <picture class="hero__art">
-      <source media="(min-width: 768px)" type="image/avif" srcset="assets/hero-boat-desktop.avif" width="694" height="676">
-      <source media="(min-width: 768px)" type="image/webp" srcset="assets/hero-boat-desktop.webp" width="694" height="676">
-      <source type="image/avif" srcset="assets/hero-boat-mobile.avif" width="694" height="676">
-      <img src="assets/hero-boat-mobile.webp" width="694" height="676" alt="" fetchpriority="high" decoding="async">
+      <source media="(min-width: 768px)" type="image/avif" srcset="assets/hero-desktop-1280.avif 1280w, assets/hero-desktop-1920.avif 1920w" sizes="100vw" width="1920" height="600">
+      <source media="(min-width: 768px)" type="image/webp" srcset="assets/hero-desktop-1280.webp 1280w, assets/hero-desktop-1920.webp 1920w" sizes="100vw" width="1920" height="600">
+      <source type="image/avif" srcset="assets/hero-mobile-450.avif 450w, assets/hero-mobile-750.avif 750w" sizes="100vw" width="750" height="1000">
+      <img src="assets/hero-mobile-750.webp" srcset="assets/hero-mobile-450.webp 450w, assets/hero-mobile-750.webp 750w" sizes="100vw" width="750" height="1000" alt="" fetchpriority="high" decoding="async">
     </picture>
 
     <div class="hero__content">

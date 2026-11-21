@@ -1,6 +1,6 @@
 # Harbour Jackpot · coded hero (Test 1)
 
-The homepage hero from the banner set, built in HTML and CSS. All text is live HTML. The image holds only the luzzu artwork.
+The homepage hero from the banner set, built in HTML and CSS. All text is live HTML. The image is the banner artwork from Figma (background, luzzu and wave) with every text layer removed.
 
 ## Files
 
@@ -8,8 +8,8 @@ The homepage hero from the banner set, built in HTML and CSS. All text is live H
 | --- | --- |
 | `index.html` | The hero markup |
 | `hero.css` | Styles, mobile first, one breakpoint at 768px |
-| `assets/hero-boat-mobile.avif` / `.webp` | Luzzu artwork for the 750 × 1000 slot (694 × 676, transparent) |
-| `assets/hero-boat-desktop.avif` / `.webp` | Same luzzu, mirrored for the 1920 × 600 slot (694 × 676, transparent) |
+| `assets/hero-mobile-750` / `-450` (`.avif`, `.webp`) | Artwork for the 750 × 1000 slot, at 750 and 450px wide |
+| `assets/hero-desktop-1920` / `-1280` (`.avif`, `.webp`) | Artwork for the 1920 × 600 slot, at 1920 and 1280px wide |
 | `assets/harbourplay-logo.svg` | Harbour Play logo |
 
 ## Run it
@@ -25,8 +25,8 @@ Then go to http://localhost:8000.
 ## Decisions
 
 - **Live text, not baked in.** The jackpot, draw time, button and compliance line are HTML, so they're readable by screen readers, search engines and AI tools, and easy to update or translate.
-- **Art direction with `<picture>`.** Mobile gets a wide crop of the whole boat; desktop gets the bow only, at the right edge. AVIF first, WebP fallback. `width` and `height` are set on every source to prevent layout shift.
-- **The boat is the only image.** The blue glow is a CSS gradient, so it costs nothing and scales to any screen. Artwork weighs 14.6 KB (mobile AVIF) and 13.3 KB (desktop AVIF).
+- **Art direction with `<picture>` and `srcset`.** Mobile gets the 3:4 banner artwork, desktop the 16:5 one, each at two widths so phones and laptops download only what they need. AVIF first, WebP fallback. `width` and `height` are set on every source to prevent layout shift.
+- **Tiny artwork.** Flat vector art compresses well: 10.2 KB for mobile (750px AVIF) and 9.0 KB for desktop (1920px AVIF), far under the 150 KB hero limit. Between 768 and 1330px the hero is taller than 16:5, so the artwork is cropped from the left and the boat stays in view.
 - **Loads first.** The artwork has `fetchpriority="high"` and isn't lazy-loaded, because the hero is the first thing on the page.
 - **Pressable button.** The Buy ticket button follows the Figma CTA component: idle has a hard Ink shadow (2px, 4px); on hover or press the pill moves 2px right and 4px down into the shadow. Transforms only, so nothing else on the page moves, and the motion is skipped with `prefers-reduced-motion`.
 - **One heading.** The `<h1>` reads "Starting jackpot €1,000,000 Harbour Jackpot Saturdays at 21:00". The draw time uses `<time datetime="21:00">`.
@@ -38,8 +38,8 @@ Then go to http://localhost:8000.
 | Check | Result |
 | --- | --- |
 | Button text on yellow | 10.6:1 |
-| Light-blue text on the brightest part of the glow | 4.8:1 (glow darkened from `#0560E0` to `#0452C4` to pass) |
-| Yellow jackpot on the brightest part of the glow | 4.3:1 (large text, needs 3:1) |
+| Light-blue subline on the brightest part of the artwork | 5.3:1 on mobile; 4.1:1 on desktop, where it is large text (needs 3:1) |
+| Small print over the wave | 9.5:1 or more |
 | Compliance text on navy | 10.7:1 |
 | Button size | 48px tall |
 | Keyboard focus | 3px white outline on the button and the T&Cs link |
@@ -47,7 +47,7 @@ Then go to http://localhost:8000.
 
 ## Artwork
 
-The luzzu is exported straight from the Figma banner file as a transparent PNG, then converted to AVIF and WebP. The desktop version is the same drawing mirrored, so the prow faces into the page as it does on the 1920 × 600 banner. The dark wave along the bottom is CSS on the landing page.
+Exported straight from the Figma banners (Hero desktop · 1920x600 and Hero mobile · 750x1000) with the logo, text, button and compliance line removed, then converted to AVIF and WebP. To update it, edit the banner in Figma and export again without the text layers, keeping the same file names.
 
 ## Next (Test 2)
 

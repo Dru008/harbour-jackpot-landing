@@ -4,7 +4,6 @@
 :root {
   --navy: #0A2346;
   --navy-deep: #081B36;
-  --glow: #0452C4;        /* darkened from #0560E0 so light-blue text keeps 4.5:1 at the brightest point */
   --yellow: #F6C431;      /* Figma variable: Yellow */
   --ink: #0A1A33;
   --muted: #C9D6EE;       /* Figma variable: Muted */
@@ -38,34 +37,22 @@ body {
   aspect-ratio: 3 / 4;
   padding: 2rem 1.75rem 1.5rem;
   color: var(--white);
-  background:
-    radial-gradient(ellipse 90% 55% at 50% 47%, var(--glow) 0%, #0A3F92 42%, rgba(10, 35, 70, 0) 78%),
-    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  background: var(--navy);   /* shows only until the artwork loads */
 }
 
-/* Scrim so the small print stays readable over the boat */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 24%;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(8, 27, 54, 0) 0%, rgba(8, 27, 54, 0.94) 55%);
-}
-
+/* The banner artwork fills the hero. On mobile it is exactly 3:4, so nothing is cropped. */
 .hero__art {
   position: absolute;
+  inset: 0;
   z-index: 0;
-  left: 0;
-  bottom: 0;
-  width: 92.5%;   /* same crop as the 750x1000 banner */
 }
 
 .hero__art img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
 }
 
 .hero__content {
@@ -203,30 +190,14 @@ body {
     /* 1920×600 slot: height follows the width (16:5) between 416px and 600px,
        and grows if the content ever needs more room */
     aspect-ratio: auto;
-    min-height: clamp(26rem, 31.25vw, 37.5rem);
+    min-height: max(26rem, 31.25vw);   /* exactly 16:5 from 1331px up; taller below that */
     padding-block: clamp(1.25rem, 2.6vw, 2.75rem);
     /* Text stays inside the central 1200px */
     padding-inline: max(1.5rem, calc((100% - var(--content-max)) / 2));
-    background:
-      radial-gradient(ellipse 55% 95% at 42% 50%, var(--glow) 0%, #0A3F92 45%, rgba(10, 35, 70, 0) 80%),
-      var(--navy);
   }
 
-  .hero::after { display: none; }
-
-  .hero__art {
-    top: 6%;
-    bottom: auto;
-    height: 100%;
-    left: auto;
-    right: 0;
-    width: auto;
-  }
-
-  .hero__art img {
-    width: auto;
-    height: 100%;
-  }
+  /* When the hero is taller than 16:5, the artwork is cropped from the left so the boat stays in view */
+  .hero__art img { object-position: right center; }
 
   .hero__logo {
     height: clamp(2.5rem, 3.1vw, 3.75rem);
