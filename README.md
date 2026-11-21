@@ -72,7 +72,7 @@ Mobile targets from the brief: LCP under 2.5s, CLS under 0.1, INP under 200ms.
 
 - The hero artwork is the Figma banner artwork (glow, luzzu and wave) with the text removed: 10.2 KB on mobile and 9.0 KB on desktop (AVIF), served at two widths each with `srcset`, not lazy-loaded, with `fetchpriority="high"`. All hero text is live HTML.
 - Every image has `width` and `height`; the countdown renders placeholder digits at full size, so nothing shifts when it starts.
-- One CSS file, one small deferred script, no frameworks. Total page weight: 108 KiB.
+- One CSS file, one small deferred script, no frameworks. Total page weight: 104 KiB.
 - Fonts are self-hosted variable WOFF2 files, split into Latin and Latin Extended so the Maltese letters only download on pages that use them. The two Latin files are preloaded.
 
 ### Lighthouse (mobile, live site)
@@ -85,7 +85,7 @@ Full report: [`reports/lighthouse-mobile.report.html`](reports/lighthouse-mobile
 | Accessibility | 100 | |
 | Best practices | 100 | |
 | SEO | 66, see below | |
-| Largest Contentful Paint | 1.5 s | under 2.5 s |
+| Largest Contentful Paint | 1.6 s | under 2.5 s |
 | Cumulative Layout Shift | 0 | under 0.1 |
 | Total Blocking Time | 0 ms | (lab stand-in for INP, target under 200 ms) |
 
